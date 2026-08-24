@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <title>REACH AI — Instagram Reel Optimizer</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <style>
+    :root{--bg:#0b0b0c;--card:#151517;--card2:#1b1b1e;--text:#f4efe5;--muted:#aaa59d;--gold:#d8b76b;--line:#2a2a2d;--good:#74d69b;--warn:#efc66b;--bad:#f18484}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    button,input,select,textarea{font:inherit}.app{max-width:680px;margin:auto;min-height:100vh;padding:calc(18px + env(safe-area-inset-top)) 16px calc(92px + env(safe-area-inset-bottom))}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.brand{font-weight:900;letter-spacing:.08em}.brand span{color:var(--gold)}
+    .sub{font-size:12px;color:var(--muted);margin-top:2px}.pill{font-size:12px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+    .hero{padding:20px;border:1px solid #332d20;border-radius:22px;background:linear-gradient(180deg,#17150f,#121214);margin-bottom:16px}
+    h1{font-size:28px;line-height:1.05;margin:0 0 8px}h2{font-size:18px;margin:0 0 12px}p{color:var(--muted);line-height:1.45}
+    .btn{border:0;border-radius:15px;padding:14px 16px;font-weight:800;cursor:pointer}.btn-primary{background:var(--gold);color:#17130b;width:100%}.btn-secondary{background:#222226;color:var(--text);border:1px solid var(--line)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
+    .metric{padding:12px;border-radius:14px;background:var(--card2)}.metric b{display:block;font-size:22px}.metric small{color:var(--muted)}
+    .score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;margin:auto;background:conic-gradient(var(--gold) calc(var(--score)*1%),#2a2928 0)}
+    .score>div{width:86px;height:86px;border-radius:50%;background:var(--card);display:grid;place-items:center;text-align:center}.score b{font-size:30px}.score small{color:var(--muted)}
+    .row{display:flex;gap:10px;align-items:center;justify-content:space-between}.stack{display:grid;gap:10px}
+    label{font-size:12px;color:var(--muted)} input,select,textarea{width:100%;margin-top:5px;background:#101012;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:12px}
+    textarea{min-height:105px;resize:vertical}.status{font-size:12px;border-radius:999px;padding:6px 9px;background:#232326;color:var(--muted)}
+    .good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.muted{color:var(--muted)}.small{font-size:12px}
+    .breakdown{display:grid;gap:8px;margin-top:10px}.break{display:grid;grid-template-columns:1fr auto;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+    .covers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.covers button{padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#111}.covers img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
+    nav{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(680px,100%);padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:rgba(11,11,12,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(6,1fr);z-index:10}
+    nav button{border:0;background:transparent;color:var(--muted);padding:9px 2px;font-size:11px}nav button.active{color:var(--gold);font-weight:800}
+    .view{display:none}.view.active{display:block}.notice{font-size:12px;border-left:3px solid var(--gold);background:#181610;padding:10px 12px;border-radius:8px;color:#d4cec2}
+    .filebox{border:1px dashed #5a4c2d;padding:18px;border-radius:16px;text-align:center}.filebox input{border:0;background:transparent;padding:0}
+    .progress{height:8px;background:#28282b;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:var(--gold);width:0}
+    .chips{display:flex;gap:7px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:#171719;color:var(--muted);border-radius:999px;padding:8px 10px;font-size:12px}
+    .history-item{padding:10px 0;border-bottom:1px solid var(--line)}
+    @media(min-width:540px){.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <header><div><div class="brand">REACH <span>AI</span></div><div class="sub">Instagram Reel Optimizer</div></div><div class="pill" id="igPill">Instagram: Not configured</div></header>
+  <section id="home" class="view active"><div class="hero"><h1>Make every Reel <span style="color:var(--gold)">more ready to perform.</span></h1><p>Analyze locally, improve cover/caption, choose posting time, and prepare auto-post.</p><button class="btn btn-primary" onclick="go('analyze')">Analyze a Reel</button></div><div class="card"><div class="row"><div><h2 style="margin-bottom:4px">Instagram</h2><div class="small muted">@_the_wedding_lab</div></div><button class="btn btn-secondary" onclick="openInstagram()">Open Profile</button></div></div><div class="card"><h2>Trust mode</h2><div class="notice">Reach Score is an optimization score, not a promise of views.</div></div></section>
+  <section id="analyze" class="view"><div class="card"><h2>Analyze Video</h2><label>Analysis Mode<select id="analysisMode"><option value="reel">Reel Mode</option><option value="trailer">Trailer Mode (1–5 min)</option></select></label><div class="filebox" style="margin-top:10px"><input id="videoInput" type="file" accept="video/*"><div class="small muted" style="margin-top:8px">Your video stays on this device during analysis.</div></div></div><div id="results" style="display:none"><div class="card"><div class="row"><h2>Reach Score</h2><span class="status">Measured + heuristics</span></div><div class="score" id="scoreRing" style="--score:0"><div><span><b id="scoreValue">0</b><small>/100</small></span></div></div></div><div class="card"><h2>Caption Studio</h2><label>Couple / client name<input id="couple"></label><button class="btn btn-secondary" style="margin-top:10px" onclick="generateCaption()">Generate</button><textarea id="caption"></textarea><textarea id="hashtags"></textarea><div class="grid" style="margin-top:10px"><button class="btn btn-secondary" onclick="copyCaption()">Copy Caption</button><button class="btn btn-primary" onclick="copyAndOpenInstagram()">Copy + Open Instagram</button></div></div></div></section>
+  <section id="schedule" class="view"><div class="card"><div class="row"><div><h2 style="margin-bottom:4px">Instagram Auto Post</h2><div class="small muted">@_the_wedding_lab</div></div><span id="autoPostEnabled" class="status bad">Not connected</span></div><div class="notice">Real auto-post uses Meta's official publishing API and requires one-time authorization.</div><button class="btn btn-secondary" style="margin-top:12px" onclick="connectInstagram()">Connect Instagram</button></div><div class="card"><h2>Schedule / Auto Post</h2><label>Date & time<input id="scheduleTime" type="datetime-local"></label><label>Video<input id="scheduleVideo" type="file" accept="video/*"></label><label>Caption<textarea id="scheduleCaption"></textarea></label><label>Publish mode<select id="publishMode"><option value="reminder">Reminder only</option><option value="autopost">Auto Post to @_the_wedding_lab</option></select></label><button class="btn btn-primary" style="margin-top:12px" onclick="saveSchedule()">Save schedule</button></div><div class="card"><h2>Queue</h2><div id="scheduleList" class="muted small">No schedules yet.</div></div></section>
+  <section id="learn" class="view"><div class="card"><h2>Performance Learning</h2><div class="notice">Add past Reel results to personalize posting time.</div></div></section>
+  <section id="history" class="view"><div class="card"><h2>History</h2><div id="historyList" class="muted small">No analyses yet.</div></div></section>
+  <section id="settings" class="view"><div class="card"><h2>Instagram Connection</h2><div class="small muted">Secure backend URL is required for Meta OAuth and auto-post.</div><label>Backend URL<input id="backendInput" placeholder="https://your-secure-backend.example"></label><button class="btn btn-secondary" style="margin-top:10px" onclick="saveBackend()">Save Backend</button></div></section>
+</div>
+<nav><button data-v="home" class="active" onclick="go('home')">Home</button><button data-v="analyze" onclick="go('analyze')">Analyze</button><button data-v="schedule" onclick="go('schedule')">Schedule</button><button data-v="learn" onclick="go('learn')">Learn</button><button data-v="history" onclick="go('history')">History</button><button data-v="settings" onclick="go('settings')">Settings</button></nav>
+<script>
+const $=id=>document.getElementById(id);function go(v){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===v));document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.v===v));window.scrollTo(0,0)}
+function openInstagram(){location.href='instagram://user?username=_the_wedding_lab';setTimeout(()=>window.open('https://www.instagram.com/_the_wedding_lab/','_blank'),900)}
+function generateCaption(){const n=$('couple').value||'this beautiful story';$('caption').value=`A little glimpse of ${n} — real emotion, beautiful moments, and a celebration worth remembering. ✨`; $('hashtags').value='#BengaliWedding #KolkataWedding #WeddingReels #IndianWedding'}
+async function copyCaption(){const t=($('caption').value||'')+'\n\n'+($('hashtags').value||'');try{await navigator.clipboard.writeText(t);alert('Caption copied.')}catch(e){alert('Copy manually.')}}async function copyAndOpenInstagram(){await copyCaption();openInstagram()}
+function backendBase(){return localStorage.getItem('reach_backend_base')||''}function saveBackend(){const v=$('backendInput').value.trim().replace(/\/$/,'');localStorage.setItem('reach_backend_base',v);alert('Backend URL saved.');checkInstagramConnection()}
+function connectInstagram(){const b=backendBase();if(!b){alert('Auto Post backend is not connected yet. A one-time Meta authorization is required.');go('settings');return}location.href=b+'/api/instagram/connect?return='+encodeURIComponent(location.href)}
+async function checkInstagramConnection(){const b=backendBase();if(!b)return;try{const r=await fetch(b+'/api/instagram/status',{credentials:'include'}),j=await r.json();if(j.connected){$('autoPostEnabled').textContent='Connected';$('autoPostEnabled').className='status good';$('igPill').textContent='Instagram: Connected'}}catch(e){}}
+async function saveSchedule(){const t=$('scheduleTime').value;if(!t)return alert('Choose a date and time');const m=$('publishMode').value;if(m==='autopost'){const b=backendBase();if(!b)return alert('Connect Instagram first.');const f=$('scheduleVideo').files[0];if(!f)return alert('Choose a video.');const fd=new FormData();fd.append('video',f);fd.append('caption',$('scheduleCaption').value||'');fd.append('scheduled_at',t);fd.append('account','_the_wedding_lab');const r=await fetch(b+'/api/instagram/schedule',{method:'POST',body:fd,credentials:'include'});const j=await r.json().catch(()=>({}));if(!r.ok||!j.ok)return alert(j.error||'Could not schedule.');alert('Auto Post queued successfully.');}else alert('Reminder saved.');}
+$('backendInput').value=backendBase();checkInstagramConnection();
+</script></body></html>
