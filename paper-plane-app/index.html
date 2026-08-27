@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paper Plane Proposal Studio</title>
+<style>
+:root{--navy:#1d3550;--gold:#be9a57;--muted:#6d7680;--line:#d7dce1;--cream:#f6f0e3;--paper:#fff;--panel:#f7f9fb}
+*{box-sizing:border-box}body{margin:0;background:#e9edf1;font-family:Arial,Helvetica,sans-serif;color:#162739}.workspace{display:grid;grid-template-columns:420px minmax(794px,1fr);gap:24px;max-width:1440px;margin:0 auto;padding:24px}.editor{background:#fff;border-radius:18px;padding:20px;box-shadow:0 12px 34px rgba(15,34,52,.1);height:calc(100vh - 48px);overflow:auto;position:sticky;top:24px}.editor h1{font-size:24px;margin:8px 0 6px}.editor .sub{font-size:13px;line-height:1.55;color:#697783;margin-bottom:18px}.editorBrand{display:flex;gap:12px;align-items:center;margin-bottom:12px}.editorBrand img{width:48px;height:48px;object-fit:contain;border-radius:12px;background:#fff}.editorBrandTitle{font-size:17px;font-weight:800}.editorBrandSub{font-size:12px;color:#798591;margin-top:2px}.section{border-top:1px solid #e2e6ea;padding-top:18px;margin-top:18px}.section h2{font-size:15px;margin:0 0 12px}.editor label{display:block;font-size:12px;font-weight:700;color:#52606c;margin:11px 0 5px}.editor input,.editor select{width:100%;height:38px;border:1px solid #d2d7dc;border-radius:8px;padding:0 10px;background:#fff;color:#183046}.editor input[type=checkbox]{width:16px;height:16px;margin:0}.editor button{border:0;border-radius:9px;background:#1f3d5a;color:#fff;font-weight:700;padding:10px 13px;cursor:pointer;margin-top:8px}.editor button.secondary{background:#e9eef2;color:#24425d}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{display:flex!important;gap:8px;align-items:center;margin:8px 0!important;font-weight:500!important}.help{font-size:12px;line-height:1.5;color:#73808b;background:#f5f8fa;border-radius:9px;padding:9px 10px}.eventEdit,.photoEdit{border:1px solid #e0e5e9;border-radius:10px;padding:10px;margin:8px 0;background:#fafcfd}.eventEdit .row,.photoEdit .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.eventEdit button,.photoEdit button{background:#eef2f5;color:#425665;padding:7px 9px;font-size:11px}.actions{display:flex;gap:8px;flex-wrap:wrap}.preview{overflow:auto;padding-bottom:30px}.page{width:210mm;height:297mm;background:#fff;margin:0 auto 24px;box-shadow:0 10px 30px rgba(0,0,0,.12);position:relative;overflow:hidden;color:#162739}.header{height:44mm;background:#f6efe1;display:grid;grid-template-columns:66mm 1fr;align-items:center;padding:7mm 15mm 6mm 13mm}.logoBox{height:30mm;width:56mm;border-radius:4mm;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}.logoBox img{max-width:94%;max-height:92%;object-fit:contain}.headText{min-width:0;padding-left:7mm}.eyebrow{font-size:2.8mm;color:var(--gold);font-weight:900;letter-spacing:.7mm;text-transform:uppercase;margin-bottom:2mm}.headText h1{font-size:6.2mm;line-height:1.05;margin:0;color:var(--navy);font-weight:900;letter-spacing:.15mm;max-width:112mm;white-space:normal;overflow-wrap:anywhere}.pageNo{font-size:2.9mm;color:#6b7885;margin-top:2mm}.desc{font-size:3.4mm;color:#42505f;margin-top:1.5mm}.content{padding:10mm 14mm 13mm}.clientCard{min-height:34mm;height:auto;border:1px solid var(--line);border-radius:5mm;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1.35fr);gap:4mm;overflow:hidden;align-items:stretch}.clientLeft{background:#f3eee5;border-radius:4mm;padding:3.6mm 5mm;border-right:1px solid #dfd2c1;min-width:0;max-width:100%;overflow:hidden;align-self:stretch}.smallGold{font-size:3.2mm;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.1mm}.clientName{font-size:6.6mm;font-weight:900;margin-top:3.8mm;line-height:1.05;max-width:100%;overflow-wrap:anywhere;word-break:break-word}.clientRight{padding:2.8mm 2.6mm;min-width:0;overflow:hidden;display:flex;flex-direction:column;justify-content:center}.metaLabel{font-size:3.1mm;color:var(--muted);font-weight:800;text-transform:uppercase;margin-bottom:2mm}.metaValue{font-size:3.35mm;margin-bottom:3.2mm;line-height:1.28;word-break:break-word;overflow-wrap:anywhere}.coverageValue{font-size:3.05mm;line-height:1.22;max-width:100%;white-space:normal;display:block}.sectionTitle{font-size:7.5mm;font-weight:900;margin:6mm 0 1.7mm}.sectionSub{font-size:3.7mm;color:var(--muted);margin-bottom:8mm}.events{display:flex;flex-direction:column;gap:5mm}.eventCard{height:28mm;border:1px solid var(--line);border-radius:6mm;padding:3.5mm 5mm;display:grid;grid-template-columns:34mm 1fr;gap:5mm;align-items:center}.dateBox{height:21mm;background:var(--navy);color:#fff;border-radius:5mm;display:flex;flex-direction:column;align-items:center;justify-content:center}.dateBox .lab{font-size:2.6mm;font-weight:800;opacity:.9}.dateBox .date{font-size:4.3mm;font-weight:900;margin-top:1.5mm;line-height:1.15;text-align:center;padding:0 1mm}.dateBox .year{font-size:3.2mm;font-weight:800;opacity:.95;margin-top:.8mm;letter-spacing:.2mm}.eventName{font-size:5mm;font-weight:900}.eventTeam{font-size:3.5mm;margin-top:2mm;line-height:1.5}.eventCoverage{font-size:3mm;color:var(--gold);font-weight:900;text-transform:uppercase;margin-top:1.5mm}.footer{position:absolute;bottom:0;left:0;right:0;height:12mm;border-top:1px solid #e5e8eb;display:flex;align-items:center;justify-content:space-between;padding:0 14mm;font-size:2.8mm;color:#6f7c87}.deliverGrid{display:grid;grid-template-columns:1fr 1fr;gap:6mm}.deliverBox{border:1px solid var(--line);border-radius:6mm;padding:5mm}.deliverBox h3{font-size:5.5mm;margin:0 0 4mm}.deliverList{display:flex;flex-direction:column;gap:2.8mm}.deliverLine{font-size:3.45mm;line-height:1.4}.deliverLine b{font-weight:900}.band{margin-top:7mm;background:var(--navy);color:#fff;border-radius:6mm;padding:5mm 6mm}.bandTitle{font-size:5mm;font-weight:900;margin-bottom:3mm}.bandGrid{display:grid;grid-template-columns:1fr 1fr;gap:6mm}.bandItem{font-size:3.3mm;line-height:1.45}.amountBox{margin-top:7mm;border:1px solid #d8c9ae;background:#f6efe1;border-radius:6mm;padding:5mm 6mm;display:flex;align-items:center;justify-content:space-between}.amountLab{font-size:3.5mm;font-weight:800}.amount{font-size:6mm;font-weight:900;color:var(--navy)}.note{margin-top:5mm;background:#fbf7ef;border-left:1.5mm solid var(--gold);padding:4mm 5mm;font-size:3.15mm;line-height:1.45;border-radius:2mm}@media(max-width:1100px){.workspace{grid-template-columns:1fr;padding:12px}.editor{position:static;height:auto}.preview{zoom:.65}}@media(max-width:600px){.preview{zoom:.44}.workspace{padding:8px;gap:12px}.editor{padding:14px;border-radius:12px}.grid2{grid-template-columns:1fr}.eventEdit .row,.photoEdit .row{grid-template-columns:1fr}}
+@media print{.clientCard{min-height:35mm}.coverageValue{font-size:3mm;line-height:1.2}body{background:#fff}.workspace{display:block;padding:0}.editor{display:none}.preview{padding:0;overflow:visible}.page{box-shadow:none;margin:0;width:210mm;height:297mm;break-after:page;page-break-after:always}.page:last-child{break-after:auto;page-break-after:auto}@page{size:A4;margin:0}}
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#13263a">
+<meta name="application-name" content="Paper Plane Proposal Studio">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Paper Plane">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style id="paperplane-mobile-app">
+@media (max-width: 760px){
+  body{overscroll-behavior-y:none}
+  .workspace,.app,.container,.wrap{max-width:100%!important}
+  input,select,button,textarea{font-size:16px!important}
+}
+@media (display-mode: standalone){
+  body{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+}
+</style>
+</head>
+<body>
+<div class="workspace">
+<aside class="editor">
+  <div class="editorBrand"><img src="icon-192.png" alt="Paper Plane"><div class="editorBrandText"><div class="editorBrandTitle">Paper Plane</div><div class="editorBrandSub">Proposal Studio</div></div></div>
+  <h1>Wedding Proposal Generator</h1>
+  <div class="sub">Choose the options. The proposal updates instantly. Choose event dates from the calendar (day, month and year). Coverage dates are calculated automatically.</div>
+
+  <div class="section" style="border-top:0;margin-top:0;padding-top:0">
+    <h2>1. Package Setup</h2>
+    <label>Package Type</label>
+    <select id="packagePreset" onchange="changePackage(this.value)">
+      <option value="essential">Essential Wedding Package</option>
+      <option value="premium">Premium Wedding Package</option>
+      <option value="custom">Custom Wedding Package</option>
+    </select>
+    <label>Client Name</label><input id="clientName" placeholder="Client name" oninput="syncBase()">
+    <div class="grid2">
+      <div><label>Coverage From (Auto)</label><input id="dateFrom" readonly placeholder="Select event dates below"></div>
+      <div><label>Coverage To (Auto)</label><input id="dateTo" readonly placeholder="Select event dates below"></div>
+    </div>
+    <label>Total Package Amount (INR)</label><input id="amount" inputmode="numeric" placeholder="155000" oninput="syncAmount()">
+  </div>
+
+  <div class="section">
+    <h2>2. Choose Events & Team</h2>
+    <div class="help">Add only the events included in this client package. Every service is selected from Paper Plane quotation options.</div>
+    <div id="eventEditor"></div>
+    <button onclick="addEvent()">+ Add Another Event</button>
+  </div>
+
+  <div class="section">
+    <h2>3. Photo Deliverables</h2>
+    <div class="help">Choose photo output for each event. Total output is calculated as a display line from your selected options.</div>
+    <div id="photoEditor"></div>
+    <button onclick="addPhoto()">+ Add Photo Deliverable</button>
+  </div>
+
+  <div class="section">
+    <h2>4. Video Deliverables</h2>
+    <div id="videoChoices"></div>
+  </div>
+
+  <div class="section">
+    <h2>5. Album & Final Delivery</h2>
+    <label>Album</label>
+    <select id="albumSelect" onchange="applyAlbum()">
+      <option value="40">High Quality 40-Page Album</option>
+      <option value="60">Premium Quality 60-Page Album</option>
+      <option value="none">No Album</option>
+    </select>
+    <label class="choice"><input type="checkbox" id="albumGift" onchange="applyAlbum()" checked> Premium album bag and gift included</label>
+    <label>Final Delivery</label>
+    <select id="deliverySelect" onchange="applyDelivery()">
+      <option value="64">64 GB Pen Drive</option>
+      <option value="online">Online Delivery</option>
+      <option value="both">64 GB Pen Drive + Online Delivery</option>
+    </select>
+    <label class="choice"><input type="checkbox" id="allFinals" onchange="applyDelivery()" checked> All final edited photos and videos</label>
+  </div>
+
+  <div class="section">
+    <h2>6. Note</h2>
+    <select id="noteSelect" onchange="applyNote()">
+      <option value="essential">Essential note</option>
+      <option value="premium">Premium note</option>
+      <option value="none">No note</option>
+    </select>
+  </div>
+
+  <div class="section actions">
+    <button onclick="window.print()">Generate PDF</button>
+    <button class="secondary" onclick="saveDraft()">Save Draft</button>
+    <button class="secondary" onclick="exportBackup()">Export Backup JSON</button>
+    <label style="width:100%;margin-top:8px">Saved Draft</label>
+    <select id="draftSelect" onchange="loadDraft(this.value)"><option value="">Select saved draft</option></select>
+    <label style="width:100%;margin-top:8px">Import Backup JSON</label>
+    <input type="file" id="importFile" accept="application/json" onchange="importBackup(event)">
+  </div>
+</aside>
+
+<main class="preview">
+  <section class="page" id="page1">
+    <div class="header"><div class="logoBox"><img src="icon-512.png" alt="Paper Plane"></div><div class="headText"><div class="eyebrow">Paper Plane</div><h1>WEDDING PACKAGE PROPOSAL</h1><div class="pageNo">Page 1 of 2</div><div class="desc">Event Coverage Summary</div></div></div>
+    <div class="content">
+      <div class="clientCard">
+        <div class="clientLeft"><div class="smallGold">Prepared Exclusively For</div><div class="clientName" id="pClient"></div></div>
+        <div class="clientRight"><div class="metaLabel">Package</div><div class="metaValue" id="pPackage"></div><div class="metaLabel">Coverage</div><div class="metaValue coverageValue" id="pCoverage"></div></div>
+      </div>
+      <div class="sectionTitle">EVENT COVERAGE</div><div class="sectionSub">Day-wise team deployment for each celebration</div>
+      <div class="events" id="pEvents"></div>
+    </div>
+    <div class="footer"><span id="pFooter1"></span><span>Crafted for elegant celebrations</span></div>
+  </section>
+
+  <section class="page" id="page2">
+    <div class="header"><div class="logoBox"><img src="icon-512.png" alt="Paper Plane"></div><div class="headText"><div class="eyebrow">Paper Plane</div><h1>WEDDING PACKAGE PROPOSAL</h1><div class="pageNo">Page 2 of 2</div><div class="desc">Deliverables & Final Package</div></div></div>
+    <div class="content">
+      <div class="deliverGrid">
+        <div class="deliverBox"><h3>PHOTO DELIVERABLES</h3><div id="pPhotos" class="deliverList"></div></div>
+        <div class="deliverBox"><h3>VIDEO DELIVERABLES</h3><div id="pVideos" class="deliverList"></div></div>
+      </div>
+      <div class="band"><div class="bandTitle">ALBUM & FINAL DELIVERY</div><div class="bandGrid"><div class="bandItem"><b id="pAlbumTitle"></b><div id="pAlbumDesc"></div></div><div class="bandItem"><b id="pDeliveryTitle"></b><div id="pDeliveryDesc"></div></div></div></div>
+      <div class="amountBox"><div><div class="amountLab">TOTAL PACKAGE</div><div id="pSummary" style="font-size:3mm;color:#687482;margin-top:1.5mm"></div></div><div class="amount" id="pAmount"></div></div>
+      <div class="note" id="pNote"></div>
+    </div>
+    <div class="footer"><span id="pFooter2"></span><span>Paper Plane</span></div>
+  </section>
+</main>
+</div>
+<script>
+const EVENT_GROUPS={
+'Bengali Events':['Aiburo Bhaat','Ashirbad','Gaye Holud — Bride Side','Gaye Holud — Groom Side','Mehendi','Wedding','Bidai','Bodhu Boron / Griha Pravesh','Bhat Kapor / Bou Bhaat','Reception','Other Bengali Event'],
+'Non-Bengali Events':['Engagement / Roka','Puja','Welcome Lunch','Welcome Dinner','Mehendi','Haldi','Mayra / Bhaat','Sangeet','Cocktail Night','Gala Night / Gala Dinner','Pool Party','Sundowner','Carnival / Mela','Family Puja / Prayer','Wedding / Pheras','Reception','After Party','Other Custom Event'],
+'Proposal Preset Events':['Bhaat','Carnival','Carnival & Sangeet']};
+const PHOTO_TEAMS=['1 Photographer','2 Photographers','3 Photographers'];
+const VIDEO_TEAMS=['1 Cinematographer','2 Cinematographers','3 Cinematographers'];
+const COVERAGE_OPTIONS=['Standard Coverage','Dual Team Coverage','Drone + 360 Included'];
+const PHOTO_COUNTS=['50+ edited, sorted photos','100+ edited photos','200+ edited, sorted photos','250+ edited photos'];
+const presets={essential:{clientName:'CLIENT NAME',packageName:'Essential Wedding Package',dateFrom:'',dateTo:'',coverage:'Select event dates',amount:'155000',events:[{date:'',name:'Bhaat',photo:'1 Photographer',video:'1 Cinematographer',coverage:'Standard Coverage'},{date:'',name:'Mehendi',photo:'1 Photographer',video:'1 Cinematographer',coverage:'Standard Coverage'},{date:'',name:'Carnival & Sangeet',photo:'2 Photographers',video:'2 Cinematographers',coverage:'Dual Team Coverage'},{date:'',name:'Wedding',photo:'2 Photographers',video:'2 Cinematographers',coverage:'Dual Team Coverage'}],photos:[{title:'Bhaat',desc:'50+ edited, sorted photos'},{title:'Mehendi',desc:'50+ edited, sorted photos'},{title:'Carnival',desc:'200+ edited, sorted photos'},{title:'Sangeet',desc:'200+ edited, sorted photos'},{title:'Wedding',desc:'200+ edited, sorted photos'},{title:'Total Output',desc:'Approx. 700+ edited photographs'}],videoFlags:{reels2:true,reels4:false,trailer:true,performance:false,fullfilm:true,docfilm:false},album:'40',albumGift:true,delivery:'64',allFinals:true,noteType:'essential',albumTitle:'High Quality 40-Page Album',albumDesc:'Premium album bag and gift included',deliveryTitle:'64 GB Pen Drive',deliveryDesc:'All final edited photos and videos',packageSummary:'Inclusive of complete event coverage, post-production and final delivery',note:'Note: Final photo count may vary slightly depending on actual event coverage and captured content.'},premium:{clientName:'CLIENT NAME',packageName:'Premium Wedding Package',dateFrom:'',dateTo:'',coverage:'Select event dates',amount:'209000',events:[{date:'',name:'Bhaat',photo:'1 Photographer',video:'1 Cinematographer',coverage:'Standard Coverage'},{date:'',name:'Mehendi',photo:'1 Photographer',video:'1 Cinematographer',coverage:'Standard Coverage'},{date:'',name:'Carnival & Sangeet',photo:'3 Photographers',video:'3 Cinematographers',coverage:'Drone + 360 Included'},{date:'',name:'Wedding',photo:'3 Photographers',video:'3 Cinematographers',coverage:'Drone + 360 Included'}],photos:[{title:'Bhaat',desc:'100+ edited photos'},{title:'Mehendi',desc:'100+ edited photos'},{title:'Carnival',desc:'250+ edited photos'},{title:'Sangeet',desc:'250+ edited photos'},{title:'Wedding',desc:'250+ edited photos'},{title:'Total Output',desc:'Approx. 950+ edited photographs'}],videoFlags:{reels2:false,reels4:true,trailer:true,performance:true,fullfilm:false,docfilm:true},album:'60',albumGift:true,delivery:'64',allFinals:true,noteType:'premium',albumTitle:'Premium Quality 60-Page Album',albumDesc:'Premium album bag and gift included',deliveryTitle:'64 GB Pen Drive',deliveryDesc:'All final edited photos and videos',packageSummary:'Inclusive of complete event coverage, drone/360, post-production and final delivery',note:'Note: Final photo count and performance-video duration may vary depending on actual coverage and captured content.'}};
+function customState(){let x=JSON.parse(JSON.stringify(presets.essential));x.packageName='Custom Wedding Package';x.amount='';x.photos=x.photos.slice(0,3);x.videoFlags={reels2:true,reels4:false,trailer:true,performance:false,fullfilm:true,docfilm:false};return x}
+let currentPreset='essential';let state=JSON.parse(JSON.stringify(presets.essential));
+function eventOptions(selected){let h='';Object.entries(EVENT_GROUPS).forEach(([g,items])=>{h+=`<optgroup label="${g}">`;[...new Set(items)].forEach(v=>h+=`<option ${v===selected?'selected':''}>${v}</option>`);h+='</optgroup>'});return h}
+function opts(arr,sel){return arr.map(v=>`<option ${v===sel?'selected':''}>${v}</option>`).join('')}
+function isISODate(v){return /^\d{4}-\d{2}-\d{2}$/.test(v||'')}
+function dateParts(v){if(!isISODate(v))return null;const [y,m,d]=v.split('-').map(Number);return {y,m,d,dt:new Date(y,m-1,d)}}
+function formatFullDate(v){const p=dateParts(v);if(!p)return '';return p.dt.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}
+function formatDateBox(v){const p=dateParts(v);if(!p)return {main:'—',year:''};return {main:String(p.d).padStart(2,'0')+' '+p.dt.toLocaleDateString('en-GB',{month:'short'}).toUpperCase(),year:String(p.y)}}
+function formatCoverageRange(from,to){const a=dateParts(from),b=dateParts(to);if(!a&&!b)return 'Select event dates';if(a&&!b)return formatFullDate(from);if(!a&&b)return formatFullDate(to);if(from===to)return formatFullDate(from);const monthA=a.dt.toLocaleDateString('en-GB',{month:'long'}),monthB=b.dt.toLocaleDateString('en-GB',{month:'long'});if(a.y===b.y&&a.m===b.m)return `${a.d}–${b.d} ${monthA} ${a.y}`;if(a.y===b.y)return `${a.d} ${monthA} – ${b.d} ${monthB} ${a.y}`;return `${a.d} ${monthA} ${a.y} – ${b.d} ${monthB} ${b.y}`}
+function recalcCoverage(){const dates=state.events.map(e=>e.date).filter(isISODate).sort();state.dateFrom=dates[0]||'';state.dateTo=dates[dates.length-1]||'';state.coverage=formatCoverageRange(state.dateFrom,state.dateTo);const from=document.getElementById('dateFrom'),to=document.getElementById('dateTo');if(from)from.value=state.dateFrom?formatFullDate(state.dateFrom):'';if(to)to.value=state.dateTo?formatFullDate(state.dateTo):''}
+function setEventDate(i,v){state.events[i].date=v;recalcCoverage();sync()}
+function changePackage(k){currentPreset=k;state=k==='custom'?customState():JSON.parse(JSON.stringify(presets[k]));renderEditor();sync()}
+function renderEditor(){document.getElementById('packagePreset').value=currentPreset;document.getElementById('clientName').value=state.clientName||'';document.getElementById('dateFrom').value=isISODate(state.dateFrom)?formatFullDate(state.dateFrom):'';document.getElementById('dateTo').value=isISODate(state.dateTo)?formatFullDate(state.dateTo):'';document.getElementById('amount').value=state.amount||'';document.getElementById('albumSelect').value=state.album||'40';document.getElementById('albumGift').checked=!!state.albumGift;document.getElementById('deliverySelect').value=state.delivery||'64';document.getElementById('allFinals').checked=!!state.allFinals;document.getElementById('noteSelect').value=state.noteType||'essential';renderEvents();renderPhotos();renderVideoChoices()}
+function renderEvents(){document.getElementById('eventEditor').innerHTML=state.events.map((e,i)=>`<div class="eventEdit"><div class="row"><div><label>Full Event Date</label><input type="date" value="${e.date||''}" onchange="setEventDate(${i},this.value)"></div><div><label>Event</label><select onchange="state.events[${i}].name=this.value;sync()">${eventOptions(e.name)}</select></div></div><div class="row"><div><label>Photography Team</label><select onchange="state.events[${i}].photo=this.value;sync()">${opts(PHOTO_TEAMS,e.photo)}</select></div><div><label>Cinematography Team</label><select onchange="state.events[${i}].video=this.value;sync()">${opts(VIDEO_TEAMS,e.video)}</select></div></div><label>Coverage</label><select onchange="state.events[${i}].coverage=this.value;sync()">${opts(COVERAGE_OPTIONS,e.coverage)}</select><button onclick="removeEvent(${i})">Remove Event</button></div>`).join('')}
+function addEvent(){if(state.events.length>=6)return;state.events.push({date:'',name:'Wedding',photo:'1 Photographer',video:'1 Cinematographer',coverage:'Standard Coverage'});renderEvents();recalcCoverage();sync()}
+function removeEvent(i){if(state.events.length<=1)return;state.events.splice(i,1);renderEvents();recalcCoverage();sync()}
+function photoTitleOptions(sel){const items=[...new Set(Object.values(EVENT_GROUPS).flat().concat(['Total Output']))];return items.map(v=>`<option ${v===sel?'selected':''}>${v}</option>`).join('')}
+const PHOTO_DESC=['50+ edited, sorted photos','100+ edited photos','200+ edited, sorted photos','250+ edited photos','Approx. 700+ edited photographs','Approx. 950+ edited photographs','Approx. selected edited photographs'];
+function renderPhotos(){document.getElementById('photoEditor').innerHTML=state.photos.map((p,i)=>`<div class="photoEdit"><div class="row"><select onchange="state.photos[${i}].title=this.value;sync()">${photoTitleOptions(p.title)}</select><select onchange="state.photos[${i}].desc=this.value;sync()">${opts(PHOTO_DESC,p.desc)}</select></div><button onclick="removePhoto(${i})">Remove</button></div>`).join('')}
+function addPhoto(){if(state.photos.length>=7)return;state.photos.push({title:'Wedding',desc:'100+ edited photos'});renderPhotos();sync()}
+function removePhoto(i){state.photos.splice(i,1);renderPhotos();sync()}
+function renderVideoChoices(){const f=state.videoFlags;document.getElementById('videoChoices').innerHTML=`<label class="choice"><input type="checkbox" ${f.reels2?'checked':''} onchange="toggleVideo('reels2',this.checked)">2 Event Reels (up to 1 minute each)</label><label class="choice"><input type="checkbox" ${f.reels4?'checked':''} onchange="toggleVideo('reels4',this.checked)">4 Event Reels (up to 1 minute each)</label><label class="choice"><input type="checkbox" ${f.trailer?'checked':''} onchange="toggleVideo('trailer',this.checked)">Cinematic Trailer (approx. 3–4 min)</label><label class="choice"><input type="checkbox" ${f.performance?'checked':''} onchange="toggleVideo('performance',this.checked)">Sangeet Multi-cam Performance Video</label><label class="choice"><input type="checkbox" ${f.fullfilm?'checked':''} onchange="toggleVideo('fullfilm',this.checked)">Full Coverage Wedding Film (approx. 30–40 min)</label><label class="choice"><input type="checkbox" ${f.docfilm?'checked':''} onchange="toggleVideo('docfilm',this.checked)">Documentary-style Wedding Film (30–40 min)</label>`}
+function toggleVideo(k,v){if(k==='reels2'&&v)state.videoFlags.reels4=false;if(k==='reels4'&&v)state.videoFlags.reels2=false;if(k==='fullfilm'&&v)state.videoFlags.docfilm=false;if(k==='docfilm'&&v)state.videoFlags.fullfilm=false;state.videoFlags[k]=v;renderVideoChoices();sync()}
+function syncBase(){state.clientName=document.getElementById('clientName').value;sync()}
+function syncAmount(){state.amount=document.getElementById('amount').value.replace(/[^0-9]/g,'');sync()}
+function applyAlbum(){state.album=document.getElementById('albumSelect').value;state.albumGift=document.getElementById('albumGift').checked;if(state.album==='40')state.albumTitle='High Quality 40-Page Album';else if(state.album==='60')state.albumTitle='Premium Quality 60-Page Album';else state.albumTitle='No Album';state.albumDesc=state.album==='none'?'Album not included':(state.albumGift?'Premium album bag and gift included':'Album only');sync()}
+function applyDelivery(){state.delivery=document.getElementById('deliverySelect').value;state.allFinals=document.getElementById('allFinals').checked;state.deliveryTitle=state.delivery==='64'?'64 GB Pen Drive':state.delivery==='online'?'Online Delivery':'64 GB Pen Drive + Online Delivery';state.deliveryDesc=state.allFinals?'All final edited photos and videos':'Selected final files';sync()}
+function applyNote(){state.noteType=document.getElementById('noteSelect').value;if(state.noteType==='essential')state.note='Note: Final photo count may vary slightly depending on actual event coverage and captured content.';else if(state.noteType==='premium')state.note='Note: Final photo count and performance-video duration may vary depending on actual coverage and captured content.';else state.note='';sync()}
+function formatAmount(v){if(!v)return '—';return Number(v).toLocaleString('en-IN')+'/-'}
+function videoLines(){const f=state.videoFlags,a=[];if(f.reels2)a.push(['2 Event Reels','Up to 1 minute each; events selected by client']);if(f.reels4)a.push(['4 Event Reels','Up to 1 minute each']);if(f.trailer)a.push(['Cinematic Trailer','Approx. 3–4 minutes']);if(f.performance)a.push(['Performance Video','One Sangeet multi-cam performance edit']);if(f.fullfilm)a.push(['Full Coverage Wedding Film','Approx. 30–40 minutes']);if(f.docfilm)a.push(['Wedding Film','Documentary-style, approx. 30–40 minutes']);return a}
+function sync(){document.getElementById('pClient').textContent=state.clientName;document.getElementById('pPackage').textContent=state.packageName;document.getElementById('pCoverage').textContent=state.coverage;document.getElementById('pAmount').textContent='INR '+formatAmount(state.amount);document.getElementById('pAlbumTitle').textContent=state.albumTitle;document.getElementById('pAlbumDesc').textContent=state.albumDesc;document.getElementById('pDeliveryTitle').textContent=state.deliveryTitle;document.getElementById('pDeliveryDesc').textContent=state.deliveryDesc;document.getElementById('pSummary').textContent=state.packageSummary;document.getElementById('pNote').textContent=state.note;document.getElementById('pFooter1').textContent=state.clientName+' · '+state.packageName;document.getElementById('pFooter2').textContent=state.clientName+' · '+state.packageName;document.getElementById('pEvents').innerHTML=state.events.map(e=>{const d=formatDateBox(e.date);return `<div class="eventCard"><div class="dateBox"><div class="lab">EVENT DATE</div><div class="date">${d.main}</div><div class="year">${d.year}</div></div><div><div class="eventName">${e.name}</div><div class="eventTeam">${e.photo} · ${e.video}</div><div class="eventCoverage">${e.coverage}</div></div></div>`}).join('');document.getElementById('pPhotos').innerHTML=state.photos.map(p=>`<div class="deliverLine"><b>${p.title}</b><br>${p.desc}</div>`).join('');document.getElementById('pVideos').innerHTML=videoLines().map(v=>`<div class="deliverLine"><b>${v[0]}</b><br>${v[1]}</div>`).join('')||'<div class="deliverLine">No video deliverables selected</div>'}
+function saveDraft(){const name=(state.clientName||'Untitled')+' · '+new Date().toLocaleString();const db=JSON.parse(localStorage.getItem('paperplaneProposalDraftsV2')||'{}');db[name]={state,currentPreset};localStorage.setItem('paperplaneProposalDraftsV2',JSON.stringify(db));refreshDrafts();document.getElementById('draftSelect').value=name}
+function refreshDrafts(){const db=JSON.parse(localStorage.getItem('paperplaneProposalDraftsV2')||'{}');document.getElementById('draftSelect').innerHTML='<option value="">Select saved draft</option>'+Object.keys(db).reverse().map(k=>`<option>${k}</option>`).join('')}
+function loadDraft(k){if(!k)return;const db=JSON.parse(localStorage.getItem('paperplaneProposalDraftsV2')||'{}');if(!db[k])return;state=db[k].state;currentPreset=db[k].currentPreset||'custom';renderEditor();recalcCoverage();sync()}
+function exportBackup(){const blob=new Blob([JSON.stringify({version:2,drafts:JSON.parse(localStorage.getItem('paperplaneProposalDraftsV2')||'{}'),current:{state,currentPreset}},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='PaperPlane_Proposal_Backup.json';a.click();URL.revokeObjectURL(a.href)}
+function importBackup(ev){const f=ev.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(x.drafts)localStorage.setItem('paperplaneProposalDraftsV2',JSON.stringify(x.drafts));if(x.current){state=x.current.state;currentPreset=x.current.currentPreset||'custom';renderEditor();recalcCoverage();sync()}refreshDrafts()}catch(e){alert('Invalid backup file')}};r.readAsText(f)}
+renderEditor();recalcCoverage();sync();refreshDrafts();
+</script>
+<script>
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>
